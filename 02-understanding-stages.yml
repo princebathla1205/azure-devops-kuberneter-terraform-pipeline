@@ -18,7 +18,7 @@ stages:
    - job : DevDeployjob
      steps :
       - bash : echo DevDeployjob
- - stage : QA Deploy
+ - stage : QADeploy
    jobs :
    - job : QADeployjob
      steps :
