@@ -17,6 +17,16 @@ stages:
       - bash : echo System Directory = $(System.DefaultWorkingDirectory)
       - bash : ls -r $(System.DefaultWorkingDirectory)
       - bash : echo Artifact Staging Directory = $(Build.ArtifactStagingDirectory)
+      - bash : java -version
+      - bash : ls -R $(Build.ArtifactStagingDirectory)
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          Contents: |
+            **/*.yaml
+            **/*.tf
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      - bash : ls -R $(Build.ArtifactStagingDirectory)    
   #  - job : Secondjob
   #    steps :
   #     - bash : echo Secondjob Firststep    
