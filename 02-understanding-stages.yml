@@ -13,9 +13,9 @@ stages:
       - bash : echo Build Number = $(Build.BuildNumber)
       - bash : echo Build Id = $(Build.BuildId)
       - bash : echo Source Branch Name = $(Build.SourceBranchName)
-      - bash : echo Source Directory = $(Build.SourceDirectory)
+      - bash : echo Source Directory = $(Build.SourcesDirectory)
       - bash : echo System Directory = $(System.DefaultWorkingDirectory)
-      - bash : ls -r = $(System.DefaultWorkingDirectory)
+      - bash : ls -r $(System.DefaultWorkingDirectory)
       - bash : echo Artifact Staging Directory = $(Build.ArtifactStagingDirectory)
   #  - job : Secondjob
   #    steps :
